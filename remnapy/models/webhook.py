@@ -56,7 +56,7 @@ class BaseUserDto(BaseModel):
     status: TUsersStatus
     user_traffic: UserTrafficDto
 
-    traffic_limit_bytes: float
+    traffic_limit_bytes: int
     traffic_limit_strategy: TResetPeriods
 
     expire_at: datetime

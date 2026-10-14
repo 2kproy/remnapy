@@ -149,7 +149,7 @@ class UserResponseDto(BaseModel):
     short_uuid: str = Field(alias="shortUuid")
     username: str
     status: UserStatus = Field(default=UserStatus.ACTIVE)
-    traffic_limit_bytes: float = Field(0, alias="trafficLimitBytes")
+    traffic_limit_bytes: int = Field(0, alias="trafficLimitBytes")
     traffic_limit_strategy: TrafficLimitStrategy = Field(
         TrafficLimitStrategy.NO_RESET, alias="trafficLimitStrategy"
     )
