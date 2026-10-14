@@ -129,7 +129,11 @@ class UserEventDto(BaseModel):
 
 class HwidUserDeviceDto(BaseModel):
     hwid: str
-    user_uuid: UUID
+    # Remnawave <=2.7 шлёт userUuid, 2.8+ — userId (BigInt) и requestIp;
+    # оба необязательные, как в REST-модели hwid.HwidDeviceDto
+    user_uuid: Optional[UUID] = None
+    user_id: Optional[int] = None
+    request_ip: Optional[str] = None
     platform: Optional[str] = None
     os_version: Optional[str] = None
     device_model: Optional[str] = None
